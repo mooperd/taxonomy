@@ -15,7 +15,6 @@ class Genus(Base):
     scientific_name = Column(String)
 
 
-
 # Species is a child of Genus
 class Species(Base):
     __tablename__ = 'species'
@@ -25,7 +24,6 @@ class Species(Base):
     # We define the relationship between Species and Genus here.
     genus = relation("Genus", backref="species")
     genus_id = Column(Integer, ForeignKey('genus.id'))
-
 
 
 class Specimen(Base):
